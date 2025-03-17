@@ -1,0 +1,41 @@
+<div class="library-container">
+  <h2>Software Libraries</h2>
+
+  <!-- Search & Filter -->
+  <mat-form-field class="full-width">
+    <mat-label>Search Libraries</mat-label>
+    <input matInput [(ngModel)]="searchTerm" placeholder="Enter name..." />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Filter by Category</mat-label>
+    <mat-select [(ngModel)]="selectedCategory">
+      <mat-option value="">All Categories</mat-option>
+      <mat-option *ngFor="let category of categories" [value]="category">
+        {{ category }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Display Libraries -->
+  <mat-card *ngFor="let library of filteredLibraries()" class="library-card">
+    <mat-card-header>
+      <mat-checkbox (change)="toggleSelection(library)">
+        {{ library.name }}
+      </mat-checkbox>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Category: {{ library.category }}</p>
+      <p>OS: {{ library.os.join(', ') }}</p>
+      <p>Version: {{ library.version }}</p>
+      <p>Cost: {{ library.cost }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Compare Button (Below the Library List) -->
+  <div><button mat-raised-button color="primary" (click)="compareLibraries()" 
+    [disabled]="selectedLibraries.length !== 2">
+    Compare Selected Libraries
+  </button></div>
+
+</div>

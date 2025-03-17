@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// Tech-Themed Color Palette
+$primary-color: #00d8ff;  // Neon Blue
+$secondary-color: #8e44ad;  // Cyber Purple
+$accent-color: #00ff7f;  // Neon Green
+$bg-color: #121212;  // Dark Background
+$text-color: #EAEAEA;  // Light Text
+
+// Apply to body
+body {
+  background-color: $bg-color;
+  color: $text-color;
+  font-family: 'Poppins', sans-serif;
+}
+// Glowing Button Effect
+.button-glow {
+    background: linear-gradient(90deg, $primary-color, $secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(0, 216, 255, 0.7);
+  
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 0px 20px rgba(0, 216, 255, 1);
+    }
+  }
+  
+  // Cyberpunk Text Glow Effect
+  .glowing-text {
+    color: $accent-color;
+    text-shadow: 0px 0px 10px $accent-color;
+    animation: pulse 1.5s infinite alternate;
+  }
+  
+  @keyframes pulse {
+    from {
+      text-shadow: 0px 0px 5px $accent-color;
+    }
+    to {
+      text-shadow: 0px 0px 20px $accent-color;
+    }
+  }
+  

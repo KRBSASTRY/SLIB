@@ -1,0 +1,27 @@
+<div class="form-container">
+  <h2>Add New Library</h2>
+  <form (submit)="addLibrary()">
+    <label>Name:</label>
+    <input [(ngModel)]="library.name" name="name" required />
+
+    <label>Category:</label>
+    <input [(ngModel)]="library.category" name="category" required />
+
+    <label>OS:</label>
+    <input [(ngModel)]="library.os" name="os" placeholder="Comma-separated (Windows, MacOS)" required />
+
+    <label>Version:</label>
+    <input [(ngModel)]="library.version" name="version" required />
+
+    <label>Cost:</label>
+    <input [(ngModel)]="library.cost" name="cost" required />
+
+    <label>Description:</label>
+    <textarea [(ngModel)]="library.description" name="description" required></textarea>
+
+    <label>Dependencies:</label>
+    <input [(ngModel)]="library.dependencies" name="dependencies" placeholder="Comma-separated dependencies" />
+
+    <button type="submit">Add Library</button>
+  </form>
+</div>
